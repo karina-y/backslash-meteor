@@ -1,0 +1,101 @@
+<head>
+    <meta charset="utf-8">
+    <title>backslash</title>
+    <meta name="description" content="A description for the application.">
+    <meta name="viewport" content="initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" sizes="16x16 32x32 64x64">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-precomposed.png">
+</head>
+
+<body>
+<div id="react-root"></div>
+
+<script type="text/javascript">
+    //need to do this in vanilla js because the footer is here in the raw html
+    document.addEventListener("DOMContentLoaded", function() {
+//        document.querySelector('.Footer').style.display = 'block';
+
+        //SCRIPT TO HIDE HEADER ON SCROLL
+        //Source: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+        // Hide Header on on scroll down
+        // Hide Header on on scroll down
+        let didScroll;
+        let lastScrollTop = 0;
+        const delta = 5;
+        const navbarHeight = $('.navbar-container').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            const st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('.navbar-container').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('.navbar-container').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+
+            lastScrollTop = st;
+        }
+
+
+        //keep an eye on the scroll space
+        //if scroll ability doesn't exist, show the navbar
+        function onElementHeightChange(elm, callback){
+
+            let lastHeight = elm.clientHeight, newHeight;
+
+            (function run(){
+                newHeight = elm.clientHeight;
+
+                if (lastHeight != newHeight) {
+                    callback();
+                }
+
+                lastHeight = newHeight;
+
+                if ($(document).height() == newHeight) {
+                    $('.navbar-container').removeClass('nav-up').addClass('nav-down');
+                }
+
+                if (elm.onElementHeightChangeTimer) {
+                    clearTimeout(elm.onElementHeightChangeTimer);
+                }
+
+                elm.onElementHeightChangeTimer = setTimeout(run, 200);
+            })();
+        }
+
+        //runs above function
+        onElementHeightChange(document.body, function(){});
+
+
+        //easter egg for client, this makes sure we don't see it in dev when working
+        if (Meteor.isProduction) {
+            console.log("if you're looking for errors you won't find any");
+        }
+
+    });
+</script>
+
+</body>

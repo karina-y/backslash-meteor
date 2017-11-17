@@ -1,0 +1,109 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+@import "../../../stylesheets/variables.less";
+
+html {
+
+  & > body {
+
+    div.bordered-body {
+      width: 100%;
+
+      & > .parallax-top {
+        overflow: hidden;
+        position: relative;
+
+        & > .parallax-bg {
+          background-attachment: fixed;
+          //background-image: url('/Content/Images/parallax-bg/modern-girl.jpg');
+          opacity: .2;
+          background-position: 0px 0px;
+          background-repeat: repeat;
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          background-size: cover;
+        }
+
+        & > .md-box {
+          padding-top: calc(@nav-height + 50);
+          background: transparent;
+          position: relative;
+
+          & > img {
+            &.right {
+              float: right;
+              padding-left: 3%;
+              width: 45%;
+
+              //@media only screen and (min-width: 768px) {
+              //  width: 70%;
+              //}
+              //
+              //@media only screen and (min-width: 992px) {
+              //  width: 45%;
+              //}
+            }
+
+            &.left {
+              float: left;
+              padding-left: 3%;
+              width: 45%;
+
+              //@media only screen and (min-width: 768px) {
+              //  width: 70%;
+              //}
+              //
+              //@media only screen and (min-width: 992px) {
+              //  width: 45%;
+              //}
+            }
+          }
+        }
+      }
+
+      & > .content-container-level-1 {
+        width: 100%;
+
+        & > .content-container-level-2 {
+          width: 80%;
+          margin: 0 auto;
+
+          & > .full-content-section {
+            text-align: center;
+
+            & > .page-title > p {
+              font: 400 13em 'Great Vibes', 'GreatVibes-Regular', Helvetica, cursive;
+              color: @backslash-pink;
+              text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+              margin: 0;
+              padding-top: 3%;
+              text-align: center;
+            }
+
+            & > .content-container-level-3 {
+              width: 100%;
+              margin: 0 auto;
+              text-align: center;
+              border: none;
+
+              @media only screen and (min-width: 480px) {
+                width: 95%;
+                border-right: thick solid @backslash-pink;
+                border-left: thick solid @backslash-pink;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}

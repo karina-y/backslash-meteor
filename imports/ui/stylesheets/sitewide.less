@@ -1,0 +1,335 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+@import "variables.less";
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+@font-face {
+  font-family: 'GreatVibes-Regular';
+  src: url('/public/fonts/GreatVibes-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'badaboom';
+  src: url('/public/fonts/badaboom.TTF') format('truetype');
+}
+
+html {
+  //both for sticky footer
+  height: 100%;
+  margin: 0;
+
+  & > head {
+
+  }
+
+  & > body {
+    //both for sticky footer
+    height: 100%;
+    margin: 0;
+
+    .custom-scrollbar {
+
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: @brand-white-gray;
+        border-left: 7px solid @brand-white;
+        border-right: 7px solid @brand-white;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: @backslash-pink;
+        border-radius: 8px;
+        border-left: 5px solid @brand-white;
+        border-right: 5px solid @brand-white;
+      }
+    }
+
+    div#react-root {
+      min-height: 100%; //for sticky footer
+
+      div.App {
+        //padding-bottom: 60px; //for sticky footer
+
+        //inherited from scss
+        & > .container {
+          margin-bottom: 20px;
+        }
+
+      }
+    }
+
+    //#region general helpers
+    .no-padding {
+      padding: 0;
+    }
+
+    .no-margin {
+      margin: 0 !important;
+    }
+
+    .no-margin-top {
+      margin-top: 0 !important;
+    }
+
+    .no-margin-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    .no-margin-top-bottom {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .no-margin-left {
+      margin-left: 0 !important;
+    }
+
+    .no-margin-right {
+      margin-right: 0 !important;
+    }
+
+    .no-margin-left-right {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    //if you're unsure how to use the vertical centering helpers, ask karina
+    .vertical-center-outer {
+      top: -50%;
+      -ms-transform: translateY (50%);
+      -webkit-transform: translateY (50%);
+      -moz-transform: translateY (50%);
+      -o-transform: translateY (50%);
+      transform: translateY(50%);
+      position: relative;
+      display: inline-block;
+    }
+
+    .vertical-center-outer-block {
+      top: -50%;
+      -ms-transform: translateY (50%);
+      -webkit-transform: translateY (50%);
+      -moz-transform: translateY (50%);
+      -o-transform: translateY (50%);
+      transform: translateY(50%);
+      position: relative;
+      display: block;
+    }
+
+    .vertical-center-inner {
+      top: 50%;
+      -ms-transform: translateY (-50%);
+      -webkit-transform: translateY (-50%);
+      -moz-transform: translateY (-50%);
+      -o-transform: translateY (-50%);
+      transform: translateY(-50%);
+      position: relative;
+      display: inline-block;
+    }
+
+    .vertical-center-inner-block {
+      top: 50%;
+      -ms-transform: translateY (-50%);
+      -webkit-transform: translateY (-50%);
+      -moz-transform: translateY (-50%);
+      -o-transform: translateY (-50%);
+      transform: translateY(-50%);
+      position: relative;
+      display: block;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .lowercase {
+      text-transform: lowercase;
+    }
+    //#endregion
+
+    @media @breakpoint-xs {
+
+      div#react-root {
+
+        div.App {
+          padding-bottom: @footer-height-xs; //for sticky footer
+        }
+      }
+
+      //#region general helpers
+      .vertical-center-outer-xs {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-outer-block-xs {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: block;
+      }
+
+      .vertical-center-inner-xs {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-inner-block-xs {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: block;
+      }
+
+      //#endregion
+    }
+
+    @media @breakpoint-sm {
+
+      div#react-root {
+
+        div.App {
+          padding-bottom: @footer-height-sm; //for sticky footer
+        }
+      }
+
+      //#region general helpers
+      .vertical-center-outer-sm {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-outer-block-sm {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: block;
+      }
+
+      .vertical-center-inner-sm {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-inner-block-sm {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: block;
+      }
+
+      //#endregion
+    }
+
+    @media @breakpoint-md {
+      div#react-root {
+
+        div.App {
+          padding-bottom: @footer-height-md; //for sticky footer
+        }
+      }
+
+      //#region general helpers
+      .vertical-center-outer-md {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-outer-block-md {
+        top: -50%;
+        -ms-transform: translateY (50%);
+        -webkit-transform: translateY (50%);
+        -moz-transform: translateY (50%);
+        -o-transform: translateY (50%);
+        transform: translateY(50%);
+        position: relative;
+        display: block;
+      }
+
+      .vertical-center-inner-md {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: inline-block;
+      }
+
+      .vertical-center-inner-block-md {
+        top: 50%;
+        -ms-transform: translateY (-50%);
+        -webkit-transform: translateY (-50%);
+        -moz-transform: translateY (-50%);
+        -o-transform: translateY (-50%);
+        transform: translateY(-50%);
+        position: relative;
+        display: block;
+      }
+
+      //#endregion
+    }
+
+    @media @breakpoint-lg {
+
+    }
+
+  }
+}

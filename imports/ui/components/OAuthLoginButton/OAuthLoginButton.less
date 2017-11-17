@@ -1,0 +1,59 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+//scss override
+
+@import "../../stylesheets/variables.less";
+
+.OAuthLoginButton {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: @pup-gray-lighter;
+  border-radius: 3px;
+
+  i {
+    margin-right: 3px;
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+  }
+
+  &.OAuthLoginButton-facebook {
+    background: @pup-facebook;
+    color: @brand-white;
+
+    &:hover { background: darken(@pup-facebook, 5%); }
+  }
+
+  &.OAuthLoginButton-google {
+    background: @pup-google;
+    color: @brand-white;
+
+    &:hover { background: darken(@pup-google, 5%); }
+  }
+
+  &.OAuthLoginButton-github {
+    background: @pup-github;
+    color: @brand-white;
+
+    &:hover { background: darken(@pup-github, 5%); }
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+
+.OAuthLoginButton + .OAuthLoginButton {
+  margin-top: 10px;
+}

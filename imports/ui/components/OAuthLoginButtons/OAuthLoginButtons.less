@@ -1,0 +1,27 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+//scss override
+
+@import "../../stylesheets/variables.less";
+
+.OAuthLoginButtons {
+  margin-bottom: 25px;
+
+  &.WithEmailMessage {
+    position: relative;
+    border-bottom: 1px solid @pup-gray-lighter;
+    padding-bottom: 30px;
+
+    .EmailMessage {
+      display: inline-block;
+      background: @brand-white;
+      padding: 0 10px;
+      position: absolute;
+      bottom: -19px;
+      left: 50%;
+    }
+  }
+}

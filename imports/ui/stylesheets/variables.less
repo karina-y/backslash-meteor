@@ -1,0 +1,86 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+//#region breakpoints
+//taken from bootstrap
+@breakpoint-xs: ~"only screen and (max-width: 767px)";
+@breakpoint-sm: ~"only screen and (min-width: 768px)";
+@breakpoint-md: ~"only screen and (min-width: 992px)";
+@breakpoint-lg: ~"only screen and (min-width: 1200px)";
+//#endregion
+
+
+//#region colors
+//backslash colors
+@backslash-pink: #EC7C7D;
+@backslash-pink-light: #F6BEBE;
+@brand-success: #75BA50;
+@brand-error: #DA5347;
+@brand-yellow: #FAD131;
+@brand-info: #1B9EDB;
+@brand-white: #FFF;
+@brand-black: #000;
+
+@brand-white-ice: #e7f4ff;
+@brand-white-gray: #f3f3f3;
+@brand-gray-light: #dddddd;
+@brand-gray-light-med: #bbbbbb;
+@brand-gray: #9A9A9A;
+@brand-gray-med: #4c4c4c;
+@brand-gray-dark: #222222;
+
+@brand-blue: #4EE2EC;
+@brand-green: #5CB85C;
+
+//pup stock colors
+@pup-primary: #337ab7;
+@pup-success: #5cb85c;
+@pup-info:    #5bc0de;
+@pup-warning: #f0ad4e;
+@pup-danger:  #d9534f;
+
+@pup-gray-darker: #222;
+@pup-gray-dark: #333;
+@pup-gray: #555;
+@pup-gray-light: #777;
+@pup-gray-lighter: #eee;
+
+@pup-facebook: #3b5998;
+@pup-google: #ea4335;
+@pup-github: @pup-gray-dark;
+
+@pup-cb-blue: #4285F4;
+@pup-cb-green: #00D490;
+@pup-cb-yellow: #FFCF50;
+@pup-cb-red: #DA5847;
+
+//#endregion
+
+
+//#region font-sizes
+@font-xxs: .75em;
+@font-xs: 1em;
+@font-sm: 1.5em;
+@font-md: 2em;
+@font-lg: 3em;
+@font-xl: 4em;
+//#endregion
+
+//screen heights
+//***IMPORTANT - this needs to stay at 100vh-FOOTERHEIGHTpx regardless of the header height
+//  the calculation only subtracts from the bottom, not equally from the top and bottom, so it should always subtract the footer height ONLY
+@screen-height-xs: ~"calc(100vh - 577px)";
+@screen-height-sm: ~"calc(100vh - 303px)";
+@screen-height-md: ~"calc(100vh - 204px)"; //used at md and up
+
+//navbar heights
+@nav-height: 70px;
+@nav-up-height: -70px;
+
+//footer heights
+@footer-height-xs: 82px;
+@footer-height-sm: auto;
+@footer-height-md: auto;
+//#endregion

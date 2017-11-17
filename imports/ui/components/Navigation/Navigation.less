@@ -1,0 +1,162 @@
+/*
+created by: karina
+created date: 11/16/17
+*/
+
+@import '../../stylesheets/variables.less';
+
+
+.navbar-container {
+  transition: top 0.2s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999 !important;
+
+  &.nav-up {
+    top: @nav-up-height;
+  }
+
+  &.nav-down {
+    margin: 0;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+  }
+
+  & > nav.navbar {
+
+    & > .container {
+      width: auto !important;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+
+      & > .navbar-header {
+        @media screen and (max-width:415px) {
+          display: flex;
+        }
+
+        & > button.navbar-toggle {
+          background-color: @backslash-pink;
+          margin-bottom: 0;
+          margin-top: 10px;
+          right: -15px;
+
+          & > span {
+          }
+        }
+
+        & > a.navbar-brand {
+          padding: unset;
+          font-size: unset;
+          line-height: unset;
+
+          & > img.backslash-logo {
+            max-height: 40px;
+            margin: 19px 7px 0 5px;
+
+
+            @media only screen and (min-width: 768px) {
+              max-height: 40px;
+              margin-top: 15px;
+              margin-right: 0;
+            }
+
+            @media only screen and (min-width: 992px) {
+              max-height: 60px;
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+
+      & > ul.navbar-right {
+      }
+
+      & > .navbar-collapse {
+        & > ul {
+          & > li {
+            padding: 10px;
+
+            & > .dropdown {
+              position: relative;
+              display: inline-block;
+              /*&:hover {
+                  & > .dropdown-content {
+                      display: block;
+                  }
+              }*/
+              & > .dropdown-content {
+                display: none;
+                position: absolute;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+                & > a > img {
+                  padding-top: 10px;
+                }
+
+                & > form {
+                  & > a {
+                    background-color: transparent;
+                    padding-top: 10px;
+                    display: block;
+
+
+                    & > img {
+                    }
+                  }
+                }
+              }
+            }
+
+            & > a {
+              background-color: transparent;
+              padding: 0;
+
+              & > .button-icon-container {
+                height: 50px;
+                width: 120px;
+                overflow: hidden;
+
+                & > img {
+                  -moz-transform: translate3d(0px, 0px, 0px);
+                  -ms-transform: translate3d(0px, 0px, 0px);
+                  -o-transform: translate3d(0px, 0px, 0px);
+                  -webkit-transform: translate3d(0px, 0px, 0px);
+                  transform: translate3d(0px, 0px, 0px);
+                  -moz-transition: transform .3s ease-in-out;
+                  -o-transition: transform .3s ease-in-out;
+                  -webkit-transition: transform .3s ease-in-out;
+                  transition: transform .3s ease-in-out;
+
+                  &:hover {
+                    -moz-transform: translate3d(0px, -50px, 0px);
+                    -ms-transform: translate3d(0px, -50px, 0px);
+                    -o-transform: translate3d(0px, -50px, 0px);
+                    -webkit-transform: translate3d(0px, -50px, 0px);
+                    transform: translate3d(0px, -50px, 0px);
+                  }
+                }
+              }
+            }
+          }
+
+          & > li.active {
+            & > a {
+              background-color: transparent;
+              padding: 0;
+
+              & > .button-icon-container {
+                & > img {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
