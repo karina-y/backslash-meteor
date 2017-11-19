@@ -4,7 +4,7 @@ import { HTTP } from 'meteor/http'
 
 Meteor.methods({
 
-  'tags.view.all': function tagsViewAll() {
+  'tags.view': function tagsViewAll() {
     try {
       return HTTP.get(Meteor.settings.Private.Db.RootUri + 'tags', {
         headers: {
@@ -32,7 +32,7 @@ Meteor.methods({
 
 rateLimit({
   methods: [
-    'tags.view.all',
+    'tags.view',
     'tags.view.byFileId'
   ],
   limit: 5,

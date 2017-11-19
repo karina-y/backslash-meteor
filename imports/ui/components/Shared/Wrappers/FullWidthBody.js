@@ -19,16 +19,6 @@ class FullWidthBody extends React.Component {
     }
   }
 
-  componentWillMount() {
-  }
-
-  componentDidMount() {
-    Meteor.call('tags.view.all', function(err, response) {
-      console.log("err", err);
-      console.log("reponse", response);
-    });
-  }
-
   render() {
     const additionalOuterClasses = this.props.additionalOuterClasses != null ? this.props.additionalOuterClasses : "";
 
