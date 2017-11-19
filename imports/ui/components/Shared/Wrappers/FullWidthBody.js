@@ -10,30 +10,40 @@ import "./FullWidthBody.less";
 
 
 class FullWidthBody extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            compensateNav: Meteor.user() ? "compensate-dual-nav" : "compensate-single-nav",
-            additionalOuterClasses: props.additionalOuterClasses
-        }
+    this.state = {
+      compensateNav: Meteor.user() ? "compensate-dual-nav" : "compensate-single-nav",
+      additionalOuterClasses: props.additionalOuterClasses
     }
+  }
 
-    render() {
-        const additionalOuterClasses = this.props.additionalOuterClasses != null ? this.props.additionalOuterClasses : "";
+  componentWillMount() {
+  }
 
-        const outerClassName = "full-width-page " + this.state.compensateNav + " " + additionalOuterClasses;
+  componentDidMount() {
+    Meteor.call('tags.view.all', function(err, response) {
+      console.log("err", err);
+      console.log("reponse", response);
+    });
+  }
 
-        return (
-            <div className={outerClassName}>
-                {this.props.children}
-            </div>
-        )
-    }
+  render() {
+    const additionalOuterClasses = this.props.additionalOuterClasses != null ? this.props.additionalOuterClasses : "";
+
+    const outerClassName = "full-width-page " + this.state.compensateNav + " " + additionalOuterClasses;
+
+    return (
+      <div className={outerClassName}>
+        {this.props.children}
+      </div>
+    )
+  }
 }
 
 FullWidthBody.propTypes = {
-    additionalOuterClasses: PropTypes.string
+  additionalOuterClasses: PropTypes.string
 };
 
 export default FullWidthBody;
