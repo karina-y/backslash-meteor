@@ -36,6 +36,8 @@ class BorderedBody extends React.Component {
 
     const backgroundImage = "url('" + this.props.heroImage + "')";
 
+    const component = this.props.component;
+
     return (
       <div className={outerClassName}>
 
@@ -54,7 +56,7 @@ class BorderedBody extends React.Component {
                       <div className="page-title"><p>{this.props.pageTitle}</p></div>
                       <div className="content-container-level-3">
 
-                        <div>hey</div>
+                          {React.createElement(component)}
 
                       </div>
                   </section>
@@ -69,7 +71,7 @@ class BorderedBody extends React.Component {
 BorderedBody.propTypes = {
   additionalOuterClasses: PropTypes.string,
   additionalInnerClasses: PropTypes.string,
-  component: PropTypes.object,
+  component: PropTypes.func.isRequired,
   pageTitle: PropTypes.string.isRequired,
   heroImage: PropTypes.string.isRequired,
   heroCharacter: PropTypes.string.isRequired,

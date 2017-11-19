@@ -6,25 +6,25 @@ Meteor.methods({
 
   'tags.view': function tagsViewAll() {
     try {
-      return HTTP.get(Meteor.settings.Private.Db.RootUri + 'tags', {
+      return HTTP.get(Meteor.settings.private.Db.RootUri + 'tags', {
         headers: {
           'Authorization': Meteor.settings.private.Db.AuthToken
         }
       }).data;
     } catch (exception) {
-      throw new Meteor.ValidationError(exception);
+      throw new Meteor.Error('500', exception);
     }
   },
 
   'tags.view.byFileId': function tagsViewByFile(userId, fileId) {
     try {
-      return HTTP.get(Meteor.settings.Private.Db.RootUri + 'tags/' + userId + "/" + fileId, {
+      return HTTP.get(Meteor.settings.private.Db.RootUri + 'tags/' + userId + "/" + fileId, {
         headers: {
           'Authorization': Meteor.settings.private.Db.AuthToken
         }
       }).data;
     } catch (exception) {
-      throw new Meteor.ValidationError(exception);
+      throw new Meteor.Error('500', exception);
     }
   }
 

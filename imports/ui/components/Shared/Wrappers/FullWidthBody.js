@@ -37,7 +37,3 @@ FullWidthBody.propTypes = {
 };
 
 export default FullWidthBody;
-
-
-
-

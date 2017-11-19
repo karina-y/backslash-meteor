@@ -22,6 +22,7 @@ import Logout from '../../pages/Logout/Logout';
 import NotFound from '../../pages/NotFound/NotFound';
 import Footer from '../../components/Footer/Footer'
 import BorderedBody from '../../components/Shared/Wrappers/BorderedBody'
+import Inspiration from '../../components/Inspiration/Inspiration'
 // import UserEnums from '../../../api/Users/enums';
 
 // const userRoles = UserEnums.USER_ROLE_ENUM;
@@ -66,7 +67,7 @@ const App = props => (
                                  heroCharacter="/images/inspiration/anna-lb-text_comic.png"
                                  characterPlacement="right"
                                  pageTitle="Inspiration"
-                                 // component={Inspiration}
+                                 component={Inspiration}
                    /> )} />
 
           {/*
