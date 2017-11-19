@@ -6,7 +6,7 @@ created date: 11/16/17
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image } from 'react-bootstrap'
+import { Grid, Image } from 'react-bootstrap'
 import "./BorderedBody.less";
 
 
@@ -41,28 +41,28 @@ class BorderedBody extends React.Component {
     return (
       <div className={outerClassName}>
 
-          <section className="parallax-top">
-              <div className="parallax-bg" style={{backgroundImage: backgroundImage}}></div>
-              <div className="md-box">
-                  <Image src={this.props.heroCharacter} className={this.props.characterPlacement} />
-              </div>
-          </section>
-
-          <div className={innerClassName}>
-              <div className="content-container-level-2">
-
-                  <section className="full-content-section">
-
-                      <div className="page-title"><p>{this.props.pageTitle}</p></div>
-                      <div className="content-container-level-3">
-
-                          {React.createElement(component)}
-
-                      </div>
-                  </section>
-
-              </div>
+        <section className="parallax-top">
+          <div className="parallax-bg" style={{backgroundImage: backgroundImage}}></div>
+          <div className="md-box">
+            <Image src={this.props.heroCharacter} className={this.props.characterPlacement} />
           </div>
+        </section>
+
+        <div className={innerClassName}>
+          <div className="content-container-level-2">
+
+            <section className="full-content-section">
+
+              <div className="page-title"><p>{this.props.pageTitle}</p></div>
+              <div className="content-container-level-3">
+                <Grid fluid>
+                  {React.createElement(component)}
+                </Grid>
+              </div>
+            </section>
+
+          </div>
+        </div>
       </div>
     )
   }

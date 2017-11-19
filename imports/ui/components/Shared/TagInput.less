@@ -1,0 +1,48 @@
+/*
+created by: karina
+created date: 11/19/17
+*/
+//overrides for react-select
+
+@import "../../stylesheets/variables.less";
+
+.Select {
+  text-align: left;
+
+  & > .Select-control {
+    border-color: @backslash-pink-light;
+    font-size: 1.2em;
+
+    & > .Select-multi-value-wrapper {
+      & > .Select-value {
+        background-color: @backslash-pink-light;
+        border-color: @backslash-pink;
+        color: @brand-white;
+
+        &  > .Select-value-icon {
+          &:hover {
+            color: @brand-white;
+            background-color: @backslash-pink;
+          }
+        }
+      }
+    }
+
+    & > .Select-arrow-zone {
+      & > .Select-arrow {
+        border-top-color: @backslash-pink;
+      }
+    }
+  }
+
+  & > .Select-menu-outer {
+    & > .Select-menu {
+      & > .Select-option {
+        &.is-focused {
+          color: @brand-white;
+          background-color: @backslash-pink-light;
+        }
+      }
+    }
+  }
+}
