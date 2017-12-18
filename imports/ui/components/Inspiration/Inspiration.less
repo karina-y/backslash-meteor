@@ -3,3 +3,37 @@ created by: karina
 created date: 11/16/17
 */
 
+@import "../../stylesheets/variables.less";
+
+.inspiration {
+
+  & > .search-results-container {
+    & > .image-container {
+
+      & > .center-cropped {
+        height: 300px;
+        margin-bottom: 40px;
+        -webkit-clip-path: polygon(0px 0px,270px -100px,270px 300px,-40px 300px,-40px -2px);
+        clip-path: polygon(0px 0px,270px -100px,270px 300px,-40px 300px,-40px -2px);
+
+        //for the hover effect
+        -webkit-transition: all 1s ease; /* Safari and Chrome */
+        -moz-transition: all 1s ease; /* Firefox */
+        -o-transition: all 1s ease; /* IE 9 */
+        -ms-transition: all 1s ease; /* Opera */
+        transition: all 1s ease;
+      }
+
+      //for the hover
+      &:hover > img {
+        -webkit-transform: scale(1.7); /* Safari and Chrome */
+        -moz-transform: scale(1.7); /* Firefox */
+        -ms-transform: scale(1.7); /* IE 9 */
+        -o-transform: scale(1.7); /* Opera */
+        transform: scale(1.7);
+        z-index: 1000;
+        position: relative;
+      }
+    }
+  }
+}

@@ -17,17 +17,25 @@ class TagInput extends React.Component {
     this.state = {
       valueKey: props.valueKey,
       set: props.set,
-      value: []
+      value: [],
+      collectTags: props.collectTags
     }
 
     this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   handleSelectChange (value) {
-
     this.setState({
       value
     });
+
+    let tags = [];
+
+    value.forEach(function(tag) {
+      tags.push(tag.TagSearchName);
+    });
+
+    this.state.collectTags(tags);
   }
 
   render() {

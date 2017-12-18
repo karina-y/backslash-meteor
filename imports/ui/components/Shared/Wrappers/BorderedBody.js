@@ -6,7 +6,7 @@ created date: 11/16/17
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Image } from 'react-bootstrap'
+import { Col, Grid, Image, Row } from 'react-bootstrap'
 import "./BorderedBody.less";
 
 
@@ -48,21 +48,22 @@ class BorderedBody extends React.Component {
           </div>
         </section>
 
-        <div className={innerClassName}>
-          <div className="content-container-level-2">
+        {/* container */}
+        <Grid className={innerClassName}>
 
-            <section className="full-content-section">
+          <Row>
+            <Col sm={12} className="page-title"><p>{this.props.pageTitle}</p></Col>
+          </Row>
 
-              <div className="page-title"><p>{this.props.pageTitle}</p></div>
-              <div className="content-container-level-3">
-                <Grid fluid>
-                  {React.createElement(component)}
-                </Grid>
-              </div>
-            </section>
+          <Row>
+            <Col sm={12} className="content-container-level-2">
+              <Grid fluid>
+                {React.createElement(component)}
+              </Grid>
+            </Col>
+          </Row>
 
-          </div>
-        </div>
+        </Grid>
       </div>
     )
   }

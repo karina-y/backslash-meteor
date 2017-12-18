@@ -38,8 +38,8 @@ html {
           & > img {
             &.right {
               float: right;
-              padding-left: 3%;
-              width: 45%;
+              padding-right: 1%;
+              width: 40%;
 
               //@media only screen and (min-width: 768px) {
               //  width: 70%;
@@ -52,8 +52,8 @@ html {
 
             &.left {
               float: left;
-              padding-left: 3%;
-              width: 45%;
+              padding-left: 1%;
+              width: 40%;
 
               //@media only screen and (min-width: 768px) {
               //  width: 70%;
@@ -68,38 +68,27 @@ html {
       }
 
       & > .content-container-level-1 {
-        width: 100%;
+        width: 80%;
 
-        & > .content-container-level-2 {
-          width: 80%;
+        .page-title > p {
+          font: 400 13em 'Great Vibes', 'GreatVibes-Regular', Helvetica, cursive;
+          color: @backslash-pink;
+          text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+          margin: 0;
+          padding-top: 3%;
+          text-align: center;
+        }
+
+        .content-container-level-2 {
           margin: 0 auto;
+          text-align: center;
+          border: none;
 
-          & > .full-content-section {
-            text-align: center;
-
-            & > .page-title > p {
-              font: 400 13em 'Great Vibes', 'GreatVibes-Regular', Helvetica, cursive;
-              color: @backslash-pink;
-              text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
-              margin: 0;
-              padding-top: 3%;
-              text-align: center;
-            }
-
-            & > .content-container-level-3 {
-              width: 100%;
-              margin: 0 auto;
-              text-align: center;
-              border: none;
-
-              @media only screen and (min-width: 480px) {
-                width: 95%;
-                border-right: thick solid @backslash-pink;
-                border-left: thick solid @backslash-pink;
-              }
-
-            }
+          @media only screen and (min-width: 480px) {
+            border-right: thick solid @backslash-pink;
+            border-left: thick solid @backslash-pink;
           }
+
         }
       }
     }
