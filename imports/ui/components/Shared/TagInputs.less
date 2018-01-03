@@ -3,11 +3,21 @@ created by: karina
 created date: 11/19/17
 */
 
+@import "../../stylesheets/variables.less";
+
 div.tag-inputs {
+  margin-bottom: 30px;
 
   & > .center-content {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+  }
+
+  @media @breakpoint-xs {
+    & > .center-content {
+      display: block;
+      margin-bottom: 0;
+    }
   }
 }

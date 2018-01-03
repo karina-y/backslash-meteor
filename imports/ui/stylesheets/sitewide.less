@@ -8,12 +8,12 @@ created date: 11/16/17
 
 @font-face {
   font-family: 'GreatVibes-Regular';
-  src: url('/public/fonts/GreatVibes-Regular.otf') format('opentype');
+  src: url('/fonts/GreatVibes-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'badaboom';
-  src: url('/public/fonts/badaboom.TTF') format('truetype');
+  src: url('/fonts/badaboom.TTF') format('truetype');
 }
 
 html {
@@ -43,10 +43,37 @@ html {
       }
 
       ::-webkit-scrollbar-thumb {
-        background: @backslash-pink;
+        background: @brand-pink;
         border-radius: 8px;
         border-left: 5px solid @brand-white;
         border-right: 5px solid @brand-white;
+      }
+    }
+
+    .btn-backslash {
+      background-color: @brand-pink;
+      color: @brand-white;
+      font-family: 'badaboom', 'sans-serif';
+      letter-spacing: 1.5px;
+      font-size: 1.8em;
+      display: inline-block;
+      padding: 6px 12px;
+      text-align: center;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid transparent;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      text-transform: uppercase;
+      margin: 5px !important;
+
+      &:hover, &:focus, &:active, &:visited {
+        opacity: .5;
+        text-decoration: none;
+        color: @brand-white !important;
+        background-color: @brand-pink !important;
       }
     }
 
@@ -99,7 +126,6 @@ html {
       margin-right: 0 !important;
     }
 
-    //if you're unsure how to use the vertical centering helpers, ask karina
     .vertical-center-outer {
       top: -50%;
       -ms-transform: translateY (50%);

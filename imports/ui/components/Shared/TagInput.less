@@ -10,19 +10,19 @@ created date: 11/19/17
   text-align: left;
 
   & > .Select-control {
-    border-color: @backslash-pink-light;
+    border-color: @brand-pink-light;
     font-size: 1.2em;
 
     & > .Select-multi-value-wrapper {
       & > .Select-value {
-        background-color: @backslash-pink-light;
-        border-color: @backslash-pink;
+        background-color: @brand-pink-light;
+        border-color: @brand-pink;
         color: @brand-white;
 
         &  > .Select-value-icon {
           &:hover {
             color: @brand-white;
-            background-color: @backslash-pink;
+            background-color: @brand-pink;
           }
         }
       }
@@ -30,7 +30,7 @@ created date: 11/19/17
 
     & > .Select-arrow-zone {
       & > .Select-arrow {
-        border-top-color: @backslash-pink;
+        border-top-color: @brand-pink;
       }
     }
   }
@@ -40,9 +40,13 @@ created date: 11/19/17
       & > .Select-option {
         &.is-focused {
           color: @brand-white;
-          background-color: @backslash-pink-light;
+          background-color: @brand-pink-light;
         }
       }
     }
+  }
+
+  @media @breakpoint-xs {
+    margin-bottom: 15px;
   }
 }

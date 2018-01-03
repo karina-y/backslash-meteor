@@ -191,7 +191,7 @@ class TagInputs extends React.Component {
           {/* submit button */}
           <Row>
             <Col sm={12}>
-              <Button onClick={() => this.state.searchPins(this.state.tags)}>SEARCH</Button>
+              <Button onClick={() => this.state.searchPins(this.state.tags)} className="btn-backslash">Style Me!</Button>
             </Col>
           </Row>
 

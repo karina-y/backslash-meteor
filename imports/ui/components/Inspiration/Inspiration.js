@@ -23,33 +23,51 @@ class Inspiration extends React.Component {
       searchResults: null
     };
 
+    this.clearSearchResults = this.clearSearchResults.bind(this);
     this.searchPins = this.searchPins.bind(this);
+  }
+
+  clearSearchResults() {
+    this.setState({
+      searchResults: [],
+      loading: true
+    });
+
+    return true;
   }
 
   searchPins(tags) {
 
-    Meteor.call('pinterest.viewPins', tags, function(err, response) {
-      if (!err) {
-        console.log("response", response);
-        Session.set('pins', response);
-      }
-      else {
-        console.log(err);
-      }
-    });
+    //first clear what we've already got, the transition is ugly
+    const resultsCleared = this.clearSearchResults();
 
-    const page = this;
+    if (resultsCleared) {
+      Meteor.call('pinterest.viewPins', tags, function(err, response) {
+        if (!err) {
+          console.log("response", response);
+          Session.set('pins', response);
+        }
+        else {
+          console.log(err);
+          //todo send client error
+        }
+      });
 
-    //watch for a change
-    Tracker.autorun(function() {
-      if (Session.get('pins')) {
-        let sessionVal = Session.get('pins');
+      const page = this;
 
-        page.setState({
-          searchResults: sessionVal
-        });
-      }
-    });
+      //watch for a change
+      Tracker.autorun(function() {
+        if (Session.get('pins')) {
+          let sessionVal = Session.get('pins');
+
+          page.setState({
+            searchResults: sessionVal,
+            loading: false
+          });
+        }
+      });
+    }
+
   }
 
   render() {
