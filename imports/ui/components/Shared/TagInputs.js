@@ -40,7 +40,7 @@ class TagInputs extends React.Component {
         Session.set('tags', response);
       }
       else {
-        console.log(err);
+        console.log("error getting tags", err);
       }
 
     });

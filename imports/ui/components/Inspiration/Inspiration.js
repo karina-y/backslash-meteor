@@ -48,7 +48,7 @@ class Inspiration extends React.Component {
           Session.set('pins', response);
         }
         else {
-          console.log(err);
+          console.log("error getting pins", err);
           //todo send client error
         }
       });

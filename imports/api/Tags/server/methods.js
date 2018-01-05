@@ -12,6 +12,7 @@ Meteor.methods({
         }
       }).data;
     } catch (exception) {
+      console.log("server error tags.view", exception)
       throw new Meteor.Error('500', exception);
     }
   },
@@ -24,6 +25,7 @@ Meteor.methods({
         }
       }).data;
     } catch (exception) {
+      console.log("server error tags.view.byFileId", exception)
       throw new Meteor.Error('500', exception);
     }
   }
